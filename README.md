@@ -1,15 +1,15 @@
-Exp-No:4 - 4 Bit Up-Down Counter Asynchronous Reset Counter-Synthesize the Gate Level Netlist and tabulate Area, Power and Timing reports.(Using Genus in Cadence)
-Aim:
+## Exp-No:4 - 4 Bit Up-Down Counter Asynchronous Reset Counter-Synthesize the Gate Level Netlist and tabulate Area, Power and Timing reports.(Using Genus in Cadence)
+## Aim:
 
   Synthesize 4Bit-Up-Down-Asynchronous-Reset-Counter design using Constraints and analyse reports, Timing, area and Power.
 
-Tool Required:
+## Tool Required:
 
   Functional Simulation: Incisive Simulator (ncvlog, ncelab, ncsim)
 
-  Synthesis: Genus
+   Synthesis: Genus
 
-Step 1: Getting Started
+## Step 1: Getting Started
 
   Synthesis requires three files as follows,
 
@@ -19,7 +19,7 @@ Step 1: Getting Started
 
     ◦ SDC (Synopsis Design Constraint) File (.sdc)
 
-Step 2 : Creating an SDC File
+## Step 2 : Creating an SDC File
 
   • In your terminal type “gedit input_constraints.sdc” to create an SDC File if you do not have one.
 
@@ -45,7 +45,7 @@ Step 2 : Creating an SDC File
 
     v, vi → Sets the maximum limit for I/O port delay to 1ps.
 
-Step 3 : Performing Synthesis
+## Step 3 : Performing Synthesis
 
   The Liberty files are present in the library path,
 
@@ -62,14 +62,14 @@ Step 3 : Performing Synthesis
     • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
 
 
-Synthesis RTL Schematic:
+## Synthesis RTL Schematic:
 
 
 ![4_op 1](https://github.com/user-attachments/assets/fb7c2f84-de05-42f2-8308-e025d7e1bf41)
 
 
 
-Area report:
+## Area report:
 
 
 ![4_area 1](https://github.com/user-attachments/assets/50cf8332-37b7-4b67-8899-60d1b6548e15)
@@ -79,20 +79,20 @@ Area report:
 
 
 
-Power Report:
+## Power Report:
 
 
 ![4_power 1](https://github.com/user-attachments/assets/c1638ee9-2289-4ca3-bd02-07d1aa85bc59)
 
 
 
-Timing Report:
+## Timing Report:
 
 ![4_time 1](https://github.com/user-attachments/assets/468cc258-3fd5-4d30-83f3-ae2b56d03bb2)
 
 
 
-Result:
+## Result:
 
   The generic netlist has been created, and area, power, and timing reports have been tabulated and generated using Genus.
 
