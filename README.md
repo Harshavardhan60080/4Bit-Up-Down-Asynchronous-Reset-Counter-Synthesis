@@ -1,81 +1,102 @@
-# 4Bit-Up-Down-Asynchronous-Reset-Counter-Synthesis
+Exp-No:4 - 4 Bit Up-Down Counter Asynchronous Reset Counter-Synthesize the Gate Level Netlist and tabulate Area, Power and Timing reports.
 
-## Aim:
 
-Synthesize 4Bit-Up-Down-Asynchronous-Reset-Counter design using Constraints and analyse reports, Timing, area and Power.
+Aim:
 
-## Tool Required:
+  Synthesize 4Bit-Up-Down-Asynchronous-Reset-Counter design using Constraints and analyse reports, Timing, area and Power.
 
-Functional Simulation: Incisive Simulator (ncvlog, ncelab, ncsim)
+Tool Required:
 
-Synthesis: Genus
+  Functional Simulation: Incisive Simulator (ncvlog, ncelab, ncsim)
 
-### Step 1: Getting Started
+  Synthesis: Genus
 
-Synthesis requires three files as follows,
+Step 1: Getting Started
 
-◦ Liberty Files (.lib)
+  Synthesis requires three files as follows,
 
-◦ Verilog/VHDL Files (.v or .vhdl or .vhd)
+    ◦ Liberty Files (.lib)
 
-◦ SDC (Synopsis Design Constraint) File (.sdc)
+    ◦ Verilog/VHDL Files (.v or .vhdl or .vhd)
 
- ### Step 2 : Creating an SDC File
+    ◦ SDC (Synopsis Design Constraint) File (.sdc)
 
-•	In your terminal type “gedit input_constraints.sdc” to create an SDC File if you do not have one.
+Step 2 : Creating an SDC File
 
-•	The SDC File must contain the following commands;
+  • In your terminal type “gedit input_constraints.sdc” to create an SDC File if you do not have one.
 
-create_clock -name clk -period 2 -waveform {0 1} [get_ports "clk"]
+  • The SDC File must contain the following commands;
 
-set_clock_transition -rise 0.1 [get_clocks "clk"]
+    create_clock -name clk -period 2 -waveform {0 1} [get_ports "clk"]
 
-set_clock_transition -fall 0.1 [get_clocks "clk"]
+    set_clock_transition -rise 0.1 [get_clocks "clk"]
 
-set_clock_uncertainty 0.01 [get_ports "clk"]
+    set_clock_transition -fall 0.1 [get_clocks "clk"]
 
-set_input_delay -max 0.8 [get_ports "rst"] -clock [get_clocks "clk"]
+    set_clock_uncertainty 0.01 [get_ports "clk"]
 
-set_output_delay -max 0.8 [get_ports "count"] -clock [get_clocks "clk"]
+    set_input_delay -max 0.8 [get_ports "rst"] -clock [get_clocks "clk"]
 
-i→ Creates a Clock named “clk” with Time Period 2ns and On Time from t=0 to t=1.
+    set_output_delay -max 0.8 [get_ports "count"] -clock [get_clocks "clk"]
 
-ii, iii → Sets Clock Rise and Fall time to 100ps.
+    i→ Creates a Clock named “clk” with Time Period 2ns and On Time from t=0 to t=1.
 
-iv → Sets Clock Uncertainty to 10ps.
+    ii, iii → Sets Clock Rise and Fall time to 100ps.
 
-v, vi → Sets the maximum limit for I/O port delay to 1ps.
+    iv → Sets Clock Uncertainty to 10ps.
 
-### Step 3 : Performing Synthesis
+    v, vi → Sets the maximum limit for I/O port delay to 1ps.
 
-The Liberty files are present in the library path,
+Step 3 : Performing Synthesis
 
-• The Available technology nodes are 180nm ,90nm and 45nm.
+  The Liberty files are present in the library path,
 
-• In the terminal, initialise the tools with the following commands if a new terminal is being
-used.
+    • The Available technology nodes are 180nm ,90nm and 45nm.
 
-◦ csh
+    • In the terminal, initialise the tools with the following commands if a new terminal is being used.
 
-◦ source /cadence/install/cshrc
+    ◦ csh
 
-• The tool used for Synthesis is “Genus”. Hence, type “genus -gui” to open the tool.
+    ◦ source /cadence/install/cshrc
 
-• Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
+    • The tool used for Synthesis is “Genus”. Hence, type “genus -gui” to open the tool.
 
-#### Synthesis RTL Schematic :
+    • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist.
 
-#### Area report:
 
-#### Power Report:
+Synthesis RTL Schematic:
 
-#### Timing Report: 
 
-#### Result: 
-
-The generic netlist has been created, and area, power, and timing reports have been tabulated and generated using Genus.
+![4_op 1](https://github.com/user-attachments/assets/859ed54e-9b70-4f95-89ce-cdf5bd61ef8d)
 
 
 
+Area report:
+
+
+![4_area 1](https://github.com/user-attachments/assets/71b55cc8-4508-45a5-aabd-47dfc8eb51b9)
+
+
+
+
+
+
+Power Report:
+
+
+![4_power 1](https://github.com/user-attachments/assets/5404ffc6-4ac0-4619-b4ee-8630e042a75e)
+
+
+
+Timing Report:
+
+
+![4_time 1](https://github.com/user-attachments/assets/9a1ab76c-d501-423c-8c6e-0aa6c0ce3af1)
+
+
+
+Result:
+
+  The generic netlist has been created, and area, power, and timing reports have been tabulated and generated using Genus.
 
 
